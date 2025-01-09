@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블</title>
+    <style>
+        /* table{
+            display:block;
+            max-height:100px;
+            overflow-y: scroll;
+        } */
+        table tbody{
+            display:block;
+            max-height:100px;
+            overflow-y: scroll;            
+        }
+        table thead, table tbody tr
+        ,table tfoot{
+            display: table;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <colgroup>
+            <col width="10%" style="background-color: aquamarine;">
+            <col width="40%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>이름</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>김가남</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>김나남</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>김다담</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>김라람</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>김마맘</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>김바밤</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>인원수</td>
+                <td>2명</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
