@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디, 클래스 선택자</title>
+    <style>
+        /* class가 many인 태그의 배경색 변경 */
+        td.many{
+            background-color: darkkhaki;
+        }
+        /* id가 only인 태그의 배경색 변경 */
+        #only{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="many">클래스 선택자</h1>
+    <h2>표시 : .</h2>
+    <h1>아이디 선택자</h1>
+    <h2>표시 : #</h2>
+    <table>
+        <tr>
+            <td class="many">1</td>
+            <td id="only">2</td>
+            <td class="many">3</td>
+        </tr>
+        <tr>
+            <td class="many">4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+    <style>
+        .egg {
+            background-color: yellow;
+        }
+        #green {
+            background-color: green;
+        }
+    </style>
+    <h2>&nbsp;&nbsp;&nbsp;계란말이</h2>
+    <ol>
+        <li><span class="egg">계란</span>을 깨서 섞어주세요.</li>
+        <li><span id="green">파</span>를 잘게 썰어서 섞어주세요.</li>
+        <li>프라이팬에 <span class="egg">계란</span>을 부어 익혀주세요.</li>
+        <li>익힌 <span class="egg">계란</span>을 말아주세요.</li>
+    </ol>
+
+</body>
+</html>
