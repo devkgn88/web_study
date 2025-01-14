@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지셔닝</title>
+</head>
+<body>
+    <h1>positioning</h1>
+    <style>
+        .box{
+            width: 100px; height: 100px;
+            border: 2px solid black;
+        }
+        .box1{position: static;}
+        .box2{
+            position:relative;
+            top:20px; left: 20px;
+        }
+        .box3{
+            position:absolute;
+            top:20px; left:20px;
+        }
+        .parent{
+            position:relative; width: 300px; height: 300px;
+            border:2px dashed gray;
+        }
+        .box4{
+            position: fixed; top: 20px; left: 50px;
+        }
+    </style>
+    <div class="box box1">Static</div>
+    <div class="box box2">Relative</div>
+    <div class="parent">
+        <div class="box box3">Absolute</div>
+    </div>
+    <div class="box box4">Fixed</div>
+    <style>
+        #userId_validate{visibility: hidden;}
+    </style>
+    <div id="enrollPage">
+        <h2>아이디 중복 확인</h2>
+        <form>
+            <input type="text" name="userId" id="userId" placeholder="아이디">
+            <span id="userId_validate">잘못된 아이디입니다.</span>
+        </form>
+    </div>
+ 
+</body>
+</html>
