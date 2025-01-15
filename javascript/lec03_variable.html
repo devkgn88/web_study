@@ -73,5 +73,69 @@
         if (!undefined) console.log("undefined is falsy");
         if (!NaN) console.log("NaN is falsy");
     </script> 
+    <h1>자료형 확인</h1>
+    <button onclick="checkType();">실행</button>
+    <script>
+        function checkType(){
+            typeof(greeting);
+            console.log(typeof(greeting));
+            console.log(typeof(name));
+            console.log(typeof(age));
+            console.log(typeof(price));
+            console.log(typeof(isStudent));
+            console.log(typeof(isAdmin));
+            console.log(typeof(person));
+            console.log(typeof(person.greet));
+            let test='tet';
+            console.log(typeof(test))
+        }
+    </script>
+    <h1>강제 형변환 실습</h1>
+    <input type="text" id="inputTxt" placeholder="숫자를 입력하세요">
+    <button onclick="testConversion()">변환 확인</button>
+    <script>
+        function testConversion() {
+            let value = document.getElementById("inputTxt").value;
+            
+            console.log("입력된 값:", value);
+            console.log("입력된 값의 타입:", typeof value);
+
+            // 문자 → 숫자 변환
+            let numberValue = Number(value);
+            console.log("문자 → 숫자 변환:", numberValue, ", 타입:", typeof numberValue);
+
+            // 숫자 → 문자 변환
+            let stringValue = numberValue.toString();
+            console.log("숫자 → 문자 변환:", stringValue, ", 타입:", typeof stringValue);
+        }
+    </script>
+    <h1>연습문제</h1>
+    <style>
+        input[type="number"]{
+            display: block;
+        }
+    </style>
+    <label for="first">첫번째 수 : </label>
+    <input type="number" id="first">
+    <label for="second">두번째 수 : </label>
+    <input type="number" id="second">
+    <input type="button" value="더하기" onclick="calcPlus();">
+    <script>
+        function calcPlus(){
+            let firstEle = document.getElementById('first').value;
+            console.log(typeof firstEle);
+            let secondEle = document.getElementById('second').value;
+            // if(!firstEle && !secondEle){
+            //     alert('두개의 숫자를 모두 입력하세요.');
+            // } else{
+            //     firstEle = Number(firstEle);
+            //     secondEle = Number(secondEle);
+            //     alert('첫번째 수 : '+firstEle
+            //         +'\n'+"두번째 수 : "+secondEle
+            //         +'\n'+'두 수의 합 : '+(firstEle+secondEle)
+            //     );
+            // }
+        }
+    </script>
 </body>
 </html>
