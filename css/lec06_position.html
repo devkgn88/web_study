@@ -45,6 +45,52 @@
             <span id="userId_validate">잘못된 아이디입니다.</span>
         </form>
     </div>
- 
+    <style>
+        /* class가 zindex-container인 요소의 자손중에 div */
+        .zindex-container > div{width: 100px; height: 100px;}
+        .z1{
+            background-color: lime;
+            position: absolute; top: 10px; left: 300px;
+            z-index: 3;
+        }
+        .z2{
+            background-color: orangered;
+            position: absolute; top: 30px; left: 330px;
+            z-index: -1;
+        }
+        .z3{
+            background-color: lightgoldenrodyellow;
+            position: absolute; top: 50px; left: 350px;
+            z-index: 1;
+        }
+        </style>
+        <div class="zindex-container">
+            <div class="z1">첫째</div>
+            <div class="z2">둘째</div>
+            <div class="z3">셋째</div>
+        </div>
+        <h1>float로 요소 배치</h1>
+        <style>
+            .content{
+                border: 2px dashed gray;
+                padding: 10px;
+            }
+            .clear{
+                border: 2px solid orange;
+                clear: both;
+            }
+        </style>
+        <div class="box" style="float: left;">
+            왼쪽으로
+        </div>
+        <div class="box" style="float: right;">
+            오른쪽으로
+        </div>
+        <div class="content">
+            Lorem dolor sit amet.
+        </div>
+        <div class="clear">
+            로렘 돌로 싯 아멧
+        </div>
 </body>
 </html>

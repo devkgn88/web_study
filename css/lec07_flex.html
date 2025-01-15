@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container1{
+            background-color: lightblue;
+            width: 600px; 
+            height: 200px;
+            display: flex;
+        }
+        .item1{
+            background-color: lightpink;
+            width: 100px; height: 80px;
+            margin: 10px;
+        }
+    </style>
+    <div class="container1">
+        <div class="item1">1</div>
+        <div class="item1">2</div>
+        <div class="item1">3</div>
+    </div>
+    <style>
+        .container2{
+            background-color: lightblue;
+            width: 600px; height: 200px;
+            margin-bottom: 10px;
+            display: flex;
+        }
+        .item2{
+            background-color: lightpink;
+            margin: 2%; text-align: center;
+            font-size: 2rem; color: #fff;
+            height: 80px;
+        }
+    </style>
+    <h1>flex-direction</h1>
+    <h2>row</h2>
+    <div class="container2" style="flex-direction: row;">
+        <div class="item2">10</div>
+        <div class="item2">20</div>
+        <div class="item2">30</div>
+    </div>
+    <h2>row-reverse</h2>
+    <div class="container2" style="flex-direction: row-reverse;">
+        <div class="item2">10</div>
+        <div class="item2">20</div>
+        <div class="item2">30</div>
+    </div>
+    <h2>column</h2>
+    <div class="container2" style="flex-direction: column;">
+        <div class="item2">10</div>
+        <div class="item2">20</div>
+        <div class="item2">30</div>
+    </div>
+    <h2>column-reverse</h2>
+    <div class="container2" style="flex-direction: column-reverse;">
+        <div class="item2">10</div>
+        <div class="item2">20</div>
+        <div class="item2">30</div>
+    </div>
+
+    <style>
+        .container3{
+            background-color: lightblue;
+            width: 200px; height: 800px;
+            display: flex;
+        }
+        .item3{
+            background-color: lightpink;
+            height: 80px; margin: 10px;
+        }
+    </style>
+    <h1>flex-wrap</h1>
+    <h2>nowrap</h2>
+    <div class="container3" style="flex-wrap: nowrap;">
+        <div class="item3">10</div>
+        <div class="item3">20</div>
+        <div class="item3">30</div>
+        <div class="item3">40</div>
+        <div class="item3">50</div>
+        <div class="item3">60</div>
+    </div>
+    <h2>wrap</h2>
+    <div class="container3" style="flex-wrap: wrap;">
+        <div class="item3">10</div>
+        <div class="item3">20</div>
+        <div class="item3">30</div>
+        <div class="item3">40</div>
+        <div class="item3">50</div>
+        <div class="item3">60</div>
+    </div>
+    <h2>wrap-reverse</h2>
+    <div class="container3" style="flex-wrap: wrap-reverse;">
+        <div class="item3">10</div>
+        <div class="item3">20</div>
+        <div class="item3">30</div>
+        <div class="item3">40</div>
+        <div class="item3">50</div>
+        <div class="item3">60</div>
+    </div>
+</body>
+</html>
