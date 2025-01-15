@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 </title>
+</head>
+<body>
+    <script>
+        // 변수 선언
+        var test;
+        test = 'JavaScript';
+        var test2 = 'JS';
+    </script>      
+    <script>
+        
+        function localExample() {
+            var localVar = "나는 지역변수야!";
+            console.log(localVar); 
+        }
+        localExample();
+        //console.log(localVar);  // 오류발생
+        console.log(globalVar);
+        var globalVar = "전역변수~";
+        function globalExample() {
+            console.log(globalVar); // 함수 안
+        }
+        globalExample();
+        console.log(globalVar); // 함수 밖
+
+        for(var i = 0 ; i < 4 ; i++){
+            console.log('for문 : '+i);
+        }
+        console.log('for문 밖 : '+i);
+
+
+        // console.log(alpha);
+        // let alpha ='test';
+        // // 변수의 유효 범위
+        // var a = '전역변수';
+        // function scopeBasic(){
+        //     var b = '지역변수';
+        // }
+        // // 1. 지역변수로 선언한 변수를 함수 밖에서 호출 -> 불가능
+        // function scopeTest1(){
+        //     var first = "지역변수1";
+        // }
+        // // console.log(first);
+        // // 2. 동일한 이름의 변수를 전역변수로도, 지역변수로도 선언한 경우
+        // var second = '전역변수2';
+        // function scopeTest2(){
+        //     var second = '지역변수2';
+        //     console.log('함수 안 : '+second);
+        // }
+        // scopeTest2();
+        // console.log('함수 밖 : '+second);
+        // // 3. for문에서 선언한 변수를 for문 밖에서 호출
+        // for(var i = 0 ; i < 4 ; i++){
+        //     console.log('for문 : '+i);
+        // }
+        // console.log('for문 밖에서 : '+i);
+    </script> 
+</body>
+</html>
