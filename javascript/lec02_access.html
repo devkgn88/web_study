@@ -25,5 +25,38 @@
         ele1.style.backgroundColor = 'gold';
     }
 </script>
+    <h1>innerHTML</h1>
+    <!-- 특정 요소 내부에 다른 요소가 있는 경우 -->
+    <div id="test1">
+        <p>Hello!</p>
+    </div>
+    <!-- 특정 요소 내부에 텍스트만 있는 경우 -->
+    <div id="test2">
+        Hello!!
+    </div>
+    <input type="button" value="가져오기" onclick="getTag();">
+    <input type="button" value="변경하기" onclick="setTag();">
+    <script>
+        function setTag(){
+            // 대입 연산자 : 요소 내부 콘텐츠 변경
+            document.getElementById('test1').innerHTML
+                = '<h1>Hello~</h1>';
+            // 복합 대입연산자 += : 요소 내부 콘텐츠 추가
+            document.getElementById('test1').innerHTML
+                += '<h1>Hello~</h1>';
+            // document.getElementById('test2').innerHTML
+            // = '<h2>Bye</h2>';
+            document.getElementById('test2').innerHTML
+            = '문자 컨텐츠';
+        }
+        function getTag(){
+            var test1 
+                = document.getElementById('test1').innerHTML;
+            var test2
+                = document.getElementById('test2').innerHTML;
+            console.log(test1);
+            console.log(test2);
+        }
+    </script>
 </body>
 </html>
