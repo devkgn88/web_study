@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 태그 접근</title>
+</head>
+<body>
+    <h1>style : 가져오고 바꾸기</h1>
+    <input id="style_btn" type="button" value="스타일 " onclick="changeStyle();">
+    <style>
+    #style_btn{
+        background-color: cornflowerblue;
+    }
+    </style>
+    <script>
+    function changeStyle(){
+        var ele1 = document.getElementById('style_btn');
+        // var st1 = ele1.style.backgroundColor;
+        // console.log(st1);
+
+        var st2 = getComputedStyle(ele1).backgroundColor;
+        console.log(st2);
+
+        ele1.style.backgroundColor = 'gold';
+    }
+</script>
+</body>
+</html>
