@@ -13,7 +13,6 @@
         var test2 = 'JS';
     </script>      
     <script>
-        
         function localExample() {
             var localVar = "나는 지역변수야!";
             console.log(localVar); 
@@ -33,32 +32,46 @@
         }
         console.log('for문 밖 : '+i);
 
+        if (true) {
+            let y = 20; // 블록 내부에서 선언
+            console.log(y); // 20
+        }
+        // console.log(y); // 오류 발생: y는 블록 밖에서 사용 불가
 
-        // console.log(alpha);
-        // let alpha ='test';
-        // // 변수의 유효 범위
-        // var a = '전역변수';
-        // function scopeBasic(){
-        //     var b = '지역변수';
-        // }
-        // // 1. 지역변수로 선언한 변수를 함수 밖에서 호출 -> 불가능
-        // function scopeTest1(){
-        //     var first = "지역변수1";
-        // }
-        // // console.log(first);
-        // // 2. 동일한 이름의 변수를 전역변수로도, 지역변수로도 선언한 경우
-        // var second = '전역변수2';
-        // function scopeTest2(){
-        //     var second = '지역변수2';
-        //     console.log('함수 안 : '+second);
-        // }
-        // scopeTest2();
-        // console.log('함수 밖 : '+second);
-        // // 3. for문에서 선언한 변수를 for문 밖에서 호출
-        // for(var i = 0 ; i < 4 ; i++){
-        //     console.log('for문 : '+i);
-        // }
-        // console.log('for문 밖에서 : '+i);
+        // console.log(z); // 오류 발생: 선언 전에 사용 불가
+        let z = 30;
+
+        const pi = 3.14;
+        console.log(pi); // 3.14
+
+        //pi = 3.14159; // 오류 발생: 재할당 불가
+
+        //const basic; // 오류 발생: 선언과 동시에 초기화 필요
+
+        let greeting = "Hello, world!";
+        let name = 'Alice';
+        let age = 100; // 정수
+        let price = 19.99; // 실수
+        let isStudent = true;
+        let isAdmin = false;
+        let person = {
+            name: 'Alice',
+            age: 100,
+            greet: function() {
+                console.log('안녕헤숑');
+            }
+        };
+        person.greet();
+        function add(a, b) {
+            return a + b;
+        }
+        let sum = add(5, 3);
+
+        if (0 == false) console.log("0 is falsy");
+        if (!"") console.log('"" is falsy');
+        if (!null) console.log("null is falsy");
+        if (!undefined) console.log("undefined is falsy");
+        if (!NaN) console.log("NaN is falsy");
     </script> 
 </body>
 </html>
