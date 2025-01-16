@@ -53,5 +53,49 @@
         }
     }
     </script>
+    <h1>면도기 공장</h1>
+    <style>
+        img{width: 30px; height: 30px;}
+    </style>
+    <label for="productCnt">생산 개수 : </label>
+    <input type="number" id="productCnt">
+    <input type="button" id="shaving_btn" value="생산">
+    <br><br>
+    <div id="shaving_div"></div>
+    <script>
+        document.querySelector('#shaving_btn').onclick = function(){
+            const num = document.querySelector('#productCnt').value;
+            let imgList='';   
+            for(let i = 0 ; i < num ; i++){
+                imgList +='<img src="../resources/shaving.png" >';
+                for(let j = 0 ; j < 2 ; j++){
+                    imgList +='<img src="../resources/knife.png">';
+                    // break;
+                }
+                imgList +='<br>';
+            }
+            document.getElementById('shaving_div').innerHTML = imgList;
+        }
+    </script>
+    <h1>콤보세트</h1>
+    <label for="setCnt">개수 : </label>
+    <input type="number" id="setCnt">
+    <input type="button" id="cgc_btn" value="주문">
+    <br><br>
+    <div id="cgc_div"></div>
+    <script>
+        document.querySelector('#cgc_btn').onclick = function(){
+            const num = document.querySelector('#setCnt').value;
+            let imgList='';   
+            for(let i = 0 ; i < num ; i++){
+                imgList +='<img src="../resources/popcorn.png">';
+                for(let j = 0 ; j < 3 ; j++){
+                    imgList +='<img src="../resources/coke.png">';
+                }
+                imgList +='<br>';
+            }
+            document.getElementById('cgc_div').innerHTML = imgList;
+        }
+    </script>
 </body>
 </html>
