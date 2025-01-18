@@ -37,5 +37,19 @@
             document.getElementById('resultPrice').value = total;
         }
     </script>
+
+    <h1>가변인자 함수 예제</h1>
+    <button onclick="sumNum(1,2,3,4);">숫자 더하기</button>
+
+    <script>
+    function sumNum() {
+        let result = 0;
+        for (let i = 0; i < arguments.length; i++) {
+            result += arguments[i]; // 모든 매개변수를 더함
+        }
+        console.log('합계:', result);
+    }
+    </script>
+
 </body>
 </html>
