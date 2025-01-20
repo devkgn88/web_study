@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <h1>기록하기</h1>
+<input type="text" id="sentence">
+<button onclick="addMemo();">
+    입력
+</button>
+<button onclick="showMemo();">
+    출력
+</button>
+<ul id="result_ul"> 
+
+</ul>
+<script>
+    let memoArr = new Array();
+    let addMemo = function(){
+        // memoArr 배열에 요소 추가
+        let ele = document.getElementById('sentence');
+        let val = ele.value;
+        memoArr.push(val);
+        ele.value = '';
+    }
+    let showMemo = function(){
+        // memoArr 배열에 데이터 화면 출력
+        let ele = document.getElementById('result_ul');
+        for(let i = 0 ; i <memoArr.length ; i++){
+            ele.innerHTML += '<li>'+memoArr[i]+'</li>';
+        }
+    }
+</script>
+</body>
+</html>
