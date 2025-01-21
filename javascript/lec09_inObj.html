@@ -61,5 +61,28 @@
         }
     }
 </script>
+<h1>Math</h1>
+<button onclick="testMathObj();">연습</button>
+<script>
+    let testMathObj = function(){
+        let num = 3.72;
+        console.log("floor : "+Math.floor(num));
+        console.log("ceil : "+Math.ceil(num));
+        console.log("round : "+Math.round(num));
+        console.log("abs : "+Math.abs(-5));
+        console.log("pow : "+Math.pow(3,3));
+        let result = Math.round(num * Math.pow(10, 1)) / Math.pow(10, 1);
+        console.log(result);
+    }
+</script>
+<h1>Math 객체 연습</h1>
+<p id="floor">Floor: 7.8</p>
+<p id="round">Round: 5.5</p>
+<p id="ceil">Ceil: 3.2</p>
+<p id="abs">Abs: -15</p>
+<p id="pow">Pow: 3^4</p>
+<button onclick="applyMathFunctions();">Math 함수 적용</button>
+<script src="../resources/basic.js"></script>
+
 </body>
 </html>
