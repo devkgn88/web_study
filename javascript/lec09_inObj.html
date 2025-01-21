@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체 </title>
+</head>
+<body>
+    <h1>string 연습하기</h1>
+    <p id="stand_str">Lorem ipsum dolor sit amet</p>
+
+<form>
+    <input type="button" value="변환" onclick="changeStr();">
+    <div>
+        <label for="str_1">대문자 만들기</label>
+        <input type="text" id="str_1">
+    </div>
+    <div>
+        <label for="str_2">소문자 만들기</label>
+        <input type="text" id="str_2">
+    </div>
+    <div>
+        <label for="str_3">문장의 길이</label>
+        <input type="text" id="str_3">
+    </div>
+    <div>
+        <label for="str_4">8번째 자리에 있는 알파벳</label>
+        <input type="text" id="str_4">
+    </div>
+    <div>
+        <label for="str_5">알파벳 'p'의 인덱스</label>
+        <input type="text" id="str_5">
+    </div>
+    <div>
+        <label for="str_6">뒤에서부터 찾았을 때 가장 가까운 'm'의 위치</label>
+        <input type="text" id="str_6">
+    </div>
+    <div>
+        <label for="str_7">12번 인덱스부터 5개의 알파벳</label>
+        <input type="text" id="str_7">
+    </div>
+    <div>
+        <label for="str_8">띄어쓰기 기준으로 단어 자르기</label>
+        <textarea rows="5" style="resize: none;" id="str_8"></textarea>
+    </div>
+</form>
+<script>
+    let changeStr = function(){
+        let ele = document.getElementById('stand_str');
+        let text = ele.innerText;
+        document.getElementById('str_1').value = text.toUpperCase();
+        document.getElementById('str_2').value = text.toLowerCase();
+        document.getElementById('str_3').value = text.length;
+        document.getElementById('str_4').value = text.charAt(7);
+        document.getElementById('str_5').value = text.indexOf('p');
+        document.getElementById('str_6').value = text.lastIndexOf('m');
+        document.getElementById('str_7').value = text.substr(12,5);
+        let textSplit = text.split(' ');
+        for( var i = 0 ; i < textSplit.length ; i++){
+            document.getElementById('str_8').value += textSplit[i]+'\n';
+        }
+    }
+</script>
+</body>
+</html>
