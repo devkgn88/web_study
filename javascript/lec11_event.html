@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+</head>
+<body>
+    <h1>이벤트 설정 방식</h1>
+    <h2>인라인 방식</h2>
+    <button onclick="inlineTest1(this);">this</button>
+    <p onclick="inlineTest2(event);">event</p>
+    <script>
+        const inlineTest1 = function(element){
+            console.log(element);
+        }
+        const inlineTest2 = function(event){
+            console.log(event);
+            console.log(event.target);
+            console.log(this);
+        }
+    </script>
+    <mark id="old">고전 방식</mark>
+    <script>
+        document.getElementById('old').onclick = function(e){
+            console.log(e.target);
+            console.log(e.target.innerText);
+            console.log(this);
+        }
+        document.getElementById('old').onclick = function(){
+            console.log('메롱');
+        }
+    </script>
+    <p id="standard">표준 이벤트 방식</p>
+    <script>
+        document.getElementById('standard').addEventListener('click',function(event){
+            console.log(event.target);
+            console.log(event.target.innerText);
+            console.log(this);
+        });
+        document.getElementById('standard').addEventListener('click',function(event){
+            console.log('짜잔~');
+        });
+    </script>
+</body>
+</html>
