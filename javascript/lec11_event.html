@@ -42,5 +42,63 @@
             console.log('짜잔~');
         });
     </script>
+
+<h2>key이벤트</h2>
+<textarea id="text_write"></textarea>
+<script>
+    // keydown : 모든 키보드 키
+    document.getElementById('text_write').onkeydown = function(event){
+        if(event.key === 'Backspace'){
+            let img = document.createElement('img');
+            img.setAttribute('src','../resources/sponge.png');
+            img.setAttribute('width','100');
+            event.target.insertAdjacentElement('afterend',img);
+        }
+    }
+    // keypress : 입력 가능한 키
+    document.getElementById('text_write').onkeypress = function(){
+        if(event.code === 'KeyD'){
+            let img = document.createElement('img');
+            img.setAttribute('src','../resources/shaving.png');
+            img.setAttribute('width','100');
+            event.target.insertAdjacentElement('afterend',img);
+        }
+    }
+    // key up
+    document.getElementById('text_write').onkeyup = function(event){
+        if(event.key === 'CapsLock'){
+            alert('대문자 변환하려구요?');
+        }
+    }
+</script>
+<br>
+<label for="searchText">검색어</label>
+<input type="text" id="searchText">
+<input type="button" value="검색" onclick="searchPerson();">
+<script>
+    let persons = [
+        {name : '김철수', age : 17},
+        {name:'이영희',age:23},
+        {name:'홍길동',age:35}
+    ];
+
+    document.getElementById('searchText').onkeyup = function(event){
+        if(event.key === 'Enter'){
+            searchPerson();
+        }
+    }
+
+    let searchPerson = function(){
+        let searchText = document.getElementById('searchText').value;
+        let resultText = '존재하지 않는 회원입니다.';
+        for(let i = 0 ; i < persons.length ; i++){
+            if(persons[i]['name'] == searchText){
+                resultText = `${persons[i].name}님은 ${persons[i].age}살 입니다.`;
+                break;
+            }
+        }
+        alert(resultText);
+    }
+</script>
 </body>
 </html>
