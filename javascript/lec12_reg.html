@@ -66,5 +66,30 @@
             ele.innerHTML += `${str.replace(reg,'(*)')}<br>`;
         }
     </script>
+    <h1>플래그 문자</h1>
+    <button onclick="flagLetterFunc();">확인</button>
+    <div id="flag_div">
+    </div>
+    <script>
+        const flagLetterFunc = function(){
+            let str = 'JavaScript jQuery AJAX';
+            // 1. 기본 
+            let reg = /a/;
+            let ele = document.getElementById('flag_div');
+            ele.innerHTML += `기본 : ${str.replace(reg,'(*)')}<br>`;
+            // 2. global
+            reg = /a/g;
+            ele.innerHTML += `g : ${str.replace(reg,'(*)')}<br>`;
+            // 3. insensitive
+            reg = /a/ig;
+            ele.innerHTML += `ig : ${str.replace(reg,'(*)')}<br>`;
+            // 4. multiple line
+            str = 'JavaScript\njQuery\nAJAX';
+            reg = /^J/i;
+            ele.innerHTML += `m(x) : ${str.replace(reg,'(*)')}<br>`
+            reg = /^J/gmi;
+            ele.innerHTML += `gmi : ${str.replace(reg,'(*)')}<br>`;
+        }
+    </script>
 </body>
 </html>
