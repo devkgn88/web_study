@@ -36,5 +36,35 @@
 
         }
     </script>
+    <h1>메타문자</h1>
+    <button onclick="metaLetterFunc();">버튼</button>
+    <div id="meta_div">
+    
+    </div>
+    <script>
+        const metaLetterFunc = function(){
+            // 비교할 문자열
+            let str = "javascript jquery ajax";
+            const ele = document.getElementById('meta_div');
+            // 1. 메타문자가 없는 경우
+            let reg = /a/;
+            ele.innerHTML += `1 : ${reg.test(str)}<br>`;
+            ele.innerHTML += `${str.replace(reg,'(*)')}<br>`;
+            // 2. ^ : 시작을 의미
+            reg = /^a/;
+            ele.innerHTML += `2 : ${reg.test(str)}<br>`;
+            ele.innerHTML += `${str.replace(reg,'(*)')}<br>`;
+            // 3. [] : []내에 여러문자들을 목록처럼 나열
+            reg = /[abc]/;
+            // reg = /^[ajs]/;
+            ele.innerHTML += `3 : ${reg.test(str)}<br>`;
+            ele.innerHTML += `${str.replace(reg,'(*)')}<br>`;
+            // 4. $ : 끝을 의미
+            reg = /x$/;
+            // reg = /[axc]$/;
+            ele.innerHTML += `4 : ${reg.test(str)}<br>`;
+            ele.innerHTML += `${str.replace(reg,'(*)')}<br>`;
+        }
+    </script>
 </body>
 </html>
