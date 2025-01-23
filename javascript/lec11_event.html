@@ -100,5 +100,32 @@
         alert(resultText);
     }
 </script>
+
+<style>
+    #ancestor{border: 2px solid orange;}
+    #parent{border : 4px dotted cadetblue;}
+    #child{border:4px double crimson}
+</style>
+<form id="ancestor">
+    조상님
+    <div id="parent">
+        부모님
+        <p id="child">자식</p>
+    </div>
+</form>
+<script>
+    document.getElementById('child').addEventListener('click',function(e){
+        e.stopPropagation();
+        alert('자식');
+    });
+    document.getElementById('parent').addEventListener('click',function(e){
+        e.stopPropagation();
+        alert('부모님');
+    });
+    document.getElementById('ancestor').addEventListener('click',function(e){
+        e.stopPropagation();
+        alert('조상님');
+    });
+</script>
 </body>
 </html>
