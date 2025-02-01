@@ -57,5 +57,42 @@
             })
         });
     </script>
+    <h1>자손,후손 선택자</h1>
+    <div id="sonTag">
+        <ul>
+            div의 자손1
+            <li>ul의 자손1</li>
+            <li>ul의 자손2</li>
+            <li>ul의 자손3</li>
+            <li>
+                <h3>li4의 자손1</h3>
+            </li>
+        </ul>
+        <h3>div의 자손2</h3>
+        <h4>div의 자손3</h4>
+    </div>
+    <script>
+        document.querySelector("#sonTag > h3").addEventListener('click',function(){
+            this.style.color  = 'blue';
+        });
+        document.querySelector("#sonTag h3").addEventListener('click',function(){
+            this.style.fontSize  = '7px';
+        });
+
+        const babyTag = document.querySelectorAll('#sonTag h3');
+        for (let i = 0; i < babyTag.length; i++) {
+            babyTag[i].addEventListener('click', function() {
+                this.style.border = '2px dotted green';
+            });
+        }
+        $(function(){
+            $('#sonTag > h3').on("click",function(){
+                $(this).css('backgroundColor','gold');
+            });
+            $('#sonTag h3').on('click',function(){
+                $(this).css('textDecoration','line-through');
+            })
+        });
+    </script>
 </body>
 </html>
