@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 선택</title>
+    <script src="../resources/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h1>아이디 선택자</h1>
+    <h2 id="js_id_h2">JavaScript방식</h2>
+    <h2 id="jquery_id_h2">jQuery방식</h2>
+    <script>
+        document.getElementById('js_id_h2').onclick = function(){
+            this.style.color = 'crimson';
+            this.innerHTML = '자바스크립';
+        }
+        $(document).ready(function(){
+            $('#jquery_id_h2').on('click',function(){
+                $(this).css('color','gold');
+                $(this).html('제이쿼리');
+            });
+        });
+</script>
+</body>
+</html>
