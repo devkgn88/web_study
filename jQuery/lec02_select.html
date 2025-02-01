@@ -39,5 +39,23 @@
             });
         })
     </script>
+    <h1>태그 선택자</h1>
+    <p>HTML</p>
+    <p>CSS</p>
+    <h4>JavaScript</h4>
+    <h4>jQuery</h4>
+    <script>
+        const pItem = document.getElementsByTagName('p');
+        for(let i = 0 ; i < pItem.length ; i++){
+            pItem[i].onclick = function(){
+                this.style.color = 'coral';
+            }
+        }
+        $(function(){
+            $('h4').on('click',function(){
+                $(this).css('color','green');
+            })
+        });
+    </script>
 </body>
 </html>
