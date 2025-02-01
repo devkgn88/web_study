@@ -21,6 +21,23 @@
                 $(this).html('제이쿼리');
             });
         });
-</script>
+    </script>
+    <h1>클래스 선택자</h1>
+    <h3 class="item">클래스 1</h3>
+    <span class="item point">클래스 2</span>
+    <div class="point">클래스 3 </div>
+    <script>
+        const items = document.getElementsByClassName('item');
+        for(let i = 0 ; i < items.length ; i++){
+            items[i].onclick = function(){
+                this.style.color = 'aqua';
+            }
+        }
+        $(function(){
+            $('.point').on('click',function(){
+                $(this).css('backgroundColor','pink');
+            });
+        })
+    </script>
 </body>
 </html>
