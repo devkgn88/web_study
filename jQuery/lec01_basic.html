@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery기초</title>
+</head>
+<body>
+    <!-- <script>
+        document.getElementsByTagName('p')[0].onclick = function(){
+            alert('test');
+        }
+    </script> -->
+    <p>클릭하세요!</p>
+    <script src="../resources/jquery-3.7.1.js"></script>
+    <script>
+        // ❌ onload 없이 사용한 경우 → 실행되지 않음
+        $('p').click(function(){
+            alert('테스트1');
+        });
+        
+        // ✅ onload를 사용한 경우 → 정상 실행됨
+        // $(document).ready(function(){
+        //     $('p').click(function(){
+        //         alert('테스트2');
+        //     });
+        // });
+        </script>
+</body>
+</html>
