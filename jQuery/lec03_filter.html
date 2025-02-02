@@ -110,6 +110,115 @@
                 $('#two').prevUntil('p').css('fontSize','3em');
         });
     </script>
+    <script>
+        $(document).ready(function(){
+            let bool = $('#brother > *').is('h2');
+            console.log(bool);
+
+            $('#brother > *').on('click',function(){
+                if($(this).is('h2')){
+                    console.log($(this).text());
+                }
+            })
+        })
+    </script>
+    <button id="arr_btn">배열 반복</button>
+    <script>
+        $(function(){
+            $('#arr_btn').on('click', function(){
+                const fruits = ['사과', '바나나', '체리'];
+                
+                $.each(fruits, function(index, value){
+                    console.log(index + ' : ' + value);
+                });
+            });
+        });
+    </script>
+    <button id="obj_btn">객체 반복</button>
+
+    <script>
+        $(function(){
+            $('#obj_btn').on('click', function(){
+                const user = { name: '철수', age: 25, city: '서울' };
     
+                $.each(user, function(key, value){
+                    console.log(key + " : " + value);
+                });
+            });
+        });
+    </script>
+    <ul id="fruitList">
+        <li>사과</li>
+        <li>바나나</li>
+        <li>체리</li>
+    </ul>
+    <button id="style_btn">스타일 변경</button>
+    
+    <script>
+        $(function(){
+            $('#style_btn').on('click', function(){
+                $('#fruitList li').each(function(index, item){
+                    $(item).css('color', index % 2 === 0 ? 'red' : 'blue');
+                });
+            });
+        });
+    </script>
+    <h2>랜덤 뽑기</h2>
+    <button onclick="rndFunc();">실행하기</button>
+    <div id="rnd_div">
+    
+    </div>
+    <script>
+        const rndFunc = function(){
+            let numbers = [];
+            for(let i = 0 ; i < 5 ; i++){
+                numbers.push(Math.floor(Math.random()*100)+1);
+            }
+            numbers.sort(function(left,right){
+                if(left>right) return -1;
+                else if(left < right) return 1;
+                else return 0;
+            });
+            let text = "";
+            $.each(numbers,function(index,value){
+                text += (index+1)+'번째 : '+value+'<br>';
+            })
+            $('#rnd_div').html(text);
+        }
+    </script>
+    <h1>할인 과일 가게</h1>
+    <ul id="product_ul">
+
+    </ul>
+    <button id="discount_btn">할인하기</button>
+    <script>
+        $(function(){
+            const products = {
+                "사과": 3000,
+                "바나나": 2000,
+                "체리": 8000,
+                "포도": 7000,
+                "수박": 5000
+            };
+            $.each(products,function(key,value){
+                $('#product_ul').append(
+                    `<li>${key}: <span class="price">${value}</span>원</li>`
+                );
+            });
+            $('#discount_btn').on('click',function(){
+                let txt = "";
+                $.each(products,function(key,value){
+                    let percent = 1;
+                    if(value >= 7000){
+                        percent = 0.8;
+                    } else if(value >= 5000){
+                        percent = 0.9;
+                    }
+                    txt += `<li>${key}: ${value*percent}원</li>`;
+                });
+                $('#product_ul').html(txt);
+            })
+        })
+    </script>
 </body>
 </html>
