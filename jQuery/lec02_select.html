@@ -94,5 +94,24 @@
             })
         });
     </script>
+    <h1>
+        속성 선택자
+    </h1> 
+    <input type="text" placeholder="속성 선택자 테스트">
+    <script>
+            // 순서 자바스크립트
+        const propTag = document.querySelectorAll('input[type=text]');
+        for(let i = 0 ; i < propTag.length ; i++){
+            propTag[i].onkeyup = function(event){
+                event.target.style.color = 'yellow';
+            }
+        }
+        // jQuery
+        $(function(){
+            $('input[type=text]').on('keyup',function(event){
+                $(event.target).css('background','purple');
+            });
+        });
+    </script>
 </body>
 </html>
