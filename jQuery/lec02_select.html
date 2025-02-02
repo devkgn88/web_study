@@ -113,5 +113,39 @@
             });
         });
     </script>
+    <h1>상태 선택자</h1>
+    <input type="checkbox" name="cake" value="strawberry">
+    <label for="straw">딸기</label>
+    <input type="checkbox" name="cake" value="choco">
+    <label for="choco">초코</label>
+    <div id="result_cnt">0개</div>
+    <script>
+        $(function(){
+            $('input[name=cake]').change(function(event){
+                const leng = $('input[name=cake]:checked').length;
+                $('#result_cnt').html(leng+'개');
+            });
+        })
+    </script>
+    <select name="menu">
+        <option value="1">짜장</option>
+        <option value="2">짬뽕</option>
+        <option value="3">울면</option>
+    </select>
+    <button onclick="test();">주문하기</button>
+    <div id="result_menu">메뉴를 선택하세요.</div>
+    <script>
+        function test(){
+            $('#result_menu').html($('select[name=menu] option:selected').html());
+        }
+    </script>
+    <button>활성버튼</button>
+    <button disabled>비활성버튼</button>
+    <script>
+        $(function(){
+            $('button:enabled').css('backgroundColor','yellowgreen');
+            $('button:disabled').css('backgroundColor','orangered');
+        })
+    </script>
 </body>
 </html>
