@@ -192,5 +192,20 @@
             $('#table_style>tbody>tr:last>td:gt(2)').css('border','3px solid gold');
         }
     </script>
+    <h2>confirm 사용하기</h2>
+    <button id="confirm_btn">실행하기</button>
+    <script>
+        $(function(){
+            $('#confirm_btn').on('click',function(){
+                // 기능구현
+                let check = confirm('개인정보활용에 동의하시겠습니까?');
+                if(check){
+                    alert('다음 단계로 진행합니다.');
+                } else{
+                    alert('개인정보 활용 동의없이 회원가입을 진행할 수 없습니다.');
+                }
+            })
+        })
+    </script>
 </body>
 </html>
