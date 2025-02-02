@@ -100,5 +100,19 @@
             }            
         })
     </script>
+
+<div class="inputcontainer">
+    <button onclick="addInput();">추가</button>
+</div>
+<script>
+    const addInput = () =>{
+        const leng = $('.inputcontainer>input[type=text]').length;
+        if(leng < 10){
+            $('.inputcontainer').append('<input type="text">');
+        } else{
+            alert('10개까지만 추가할 수 있습니다.');
+        }
+    }
+</script>
 </body>
 </html>
