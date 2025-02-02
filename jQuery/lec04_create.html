@@ -114,5 +114,37 @@
         }
     }
 </script>
+<h1>글쓰기</h1>
+<div>
+    <input type="radio" name="type" id="title1" value="h1">
+    <label for="title1">제목1</label><br>
+    <input type="radio" name="type" id="title2" value="h2">
+    <label for="title2">제목2</label><br>
+    <input type="radio" name="type" id="title3" value="h3">
+    <label for="title3">제목3</label><br>
+    <input type="radio" name="type" id="para" value="p">
+    <label for="para">문단</label>
+</div>
+<div>
+    <label for="text">내용</label>
+    <input type="text" id="text">
+</div>
+<div id="board_div">
+
+</div>
+<script>
+    $('#text').on('keyup',function(event){
+        if(event.key == 'Enter'){
+            if($('input[name=type]').is(':checked')){
+                const type = $('input[name=type]:checked').val();
+                const str = $('#text').val();
+                const ele = $('<'+type+'>').text(str);
+                $('#board_div').append(ele);
+            } else{
+                alert('체크박스를 선택해주세요.');
+            }
+        }
+    })
+</script>
 </body>
 </html>
