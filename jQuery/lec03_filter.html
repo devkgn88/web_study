@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 탐색(필터링)</title>
+    <script src="../resources/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h1>Filtering 메소드</h1>
+    <h4>가</h4>
+    <h4 class="test">나</h4>
+    <h4 class="test">다</h4>
+    <h4>라</h4>
+    <script>
+        $(document).ready(function(){
+            $('h4').first().css('color', 'red');
+            $('h4').last().css('border', '3px dotted green');
+            $('h4').eq(2).css('color', 'blue');
+            $('h4').filter('.test').css('border', '3px solid gold');
+
+            $('h4').filter(function(index){
+                return $(this).text().includes('나');
+            }).css('backgroundColor', 'pink');
+
+            $('h4').not('.test').css('textDecoration', 'line-through');
+            
+            $('h4').filter(function(index,item){
+                return index % 2 === 1;  // 인덱스가 홀수면 true
+            }).css('borderRadius', '15px');
+            $('h4').filter(function(index,item){
+                return $(item).text().length >= 2;
+            }).css('opacity','0.2');
+        });
+    </script>
+    <h2>3글자 이상 데이터 찾기</h2>
+    <div class="data_div">
+        <p>가나다라</p>
+        <p>abcde</p>
+        <h3>썬칩</h3>
+        <h5>홈런볼</h5>
+        <span>초코칩쿠키</span>
+        <p>칸쵸</p>
+        <h5>초코파이</h5>
+        <h2>칙촉</h2>
+    </div>
+    <button id="checkBtn">확인하기</button>
+    <script>
+        $(function(){
+            $('#checkBtn').on('click',function(){
+                $('.data_div *').filter(function(index,item){
+                    return $(item).text().length >= 3;
+                }).css('color','orange');
+            })
+        })
+    </script>
+
+    <div id="grandparent">
+        할아버지
+        <div id="parent">
+            아버지
+            <p id="child">나</p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            // p의 바로 위 상위 요소 (parent)
+            $('#child').parent().css('border', '3px dotted blue');  
+    
+            // p의 모든 상위 요소 중 id가 grandparent인 요소
+            $('#child').parents('#grandparent').css('backgroundColor','gold');  
+    
+            // p부터 #grandparent 전까지 모든 상위 요소
+            $('#child').parentsUntil('#grandparent').css('color', 'white');  
+        });
+    </script>
+    <div id="wrapper">
+        <div id="box">
+            <p>첫 번째 자식</p>
+            <p>두 번째 자식</p>
+            <span>세 번째 자식</span>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            // box의 바로 아래 자식 요소 선택
+            $('#box').children().css('border', '2px solid green');  
+    
+            // box 내부의 모든 <p> 요소 선택
+            $('#box').find('p').css('backgroundColor', 'pink');  
+        });
+    </script>
+    <h1>SideWay 메소드</h1>
+    <div id="brother">
+        <p>p1</p>
+        <h1>h1</h1>
+        <h2 id="two">h2</h2>
+        <h3>h3</h3>
+        <p>p2</p>
+    </div>
+    <script>
+        $(document).ready(function(){
+                $('#two').siblings('p').css('border','3px dashed green');
+                $('#two').next().css('color','blue');
+                $('#two').nextAll().css('backgroundColor','gold');
+                $('#two').nextUntil('p').css('textDecoration','line-through');
+        
+                $('#two').prev().css('backgroundColor','pink');
+                $('#two').prevAll().css('color','orange');
+                $('#two').prevUntil('p').css('fontSize','3em');
+        });
+    </script>
+    
+</body>
+</html>
