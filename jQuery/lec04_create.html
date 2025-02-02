@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 생성</title>
+    <script src="../resources/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h1>html() 함수</h1>
+    <div id="myDiv">
+        <a href="#">구디</a>
+        <p>이것도?</p>
+    </div>
+    <button id="getHtml">HTML 가져오기</button>
+    <button id="setHtml">HTML 변경하기</button>
+    <script>
+        $(function() {
+            // HTML 가져오기
+            $('#getHtml').click(function() {
+                console.log($('#myDiv').html());
+            });
+            // HTML 변경하기
+            $('#setHtml').click(function() {
+                $('#myDiv').html('<p>새로운 내용!</p>');
+            });
+        });
+    </script>
+    <button id="getText">텍스트 가져오기</button>
+    <button id="setText">텍스트 변경하기</button>
+    <script>
+        $(function() {
+            // 텍스트 가져오기
+            $('#getText').click(function() {
+                console.log($('#myDiv').text());
+            });
+    
+            // 텍스트 변경하기
+            $('#setText').click(function() {
+                $('#myDiv').text('새로운 텍스트!');
+            });
+        });
+    </script>
+    <h2>자식 요소 추가</h2>
+    <div id="container" style="border:2px solid green;">
+        <p>기존 자식 요소</p>
+    </div>
+    <button id="addLast">맨 뒤에 추가</button>
+    <button id="addFirst">맨 앞에 추가</button>
+    <script>
+        $(function() {
+            // 부모 요소의 맨 뒤에 추가
+            $('#addLast').click(function() {
+                $('#container').append('<p class="testLast">👉 맨 뒤에 추가됨</p>');
+                // const pTag = document.createElement('p');
+                // const pText = document.createTextNode('👉 맨 뒤에 추가됨');
+                // pTag.appendChild(pText);
+                // pTag.classList.add('testLast');
+                // document.getElementById('container').appendChild(pTag);
+            });
+    
+            // 부모 요소의 맨 앞에 추가
+            $('#addFirst').click(function() {
+                $('#container').prepend('<p>👈 맨 앞에 추가됨</p>');
+            });
+
+        });
+    </script>
+    <button id="addBefore">앞에 추가</button>
+    <button id="addAfter">뒤에 추가</button>
+    <script>
+        $(function() {
+            // 기준 요소 앞에 추가
+            $('#addBefore').click(function() {
+                $('#container').before('<p>⬆️ 기준 요소 앞에 추가됨</p>');
+            });
+
+            // 기준 요소 뒤에 추가
+            $('#addAfter').click(function() {
+                $('#container').after('<p>⬇️ 기준 요소 뒤에 추가됨</p>');
+            });
+        });
+    </script>
+    <input type="text" id="img_src">
+    <button id="add_btn">추가</button><br>
+    <input type="radio" name="brother" id="back" value="1" checked>
+    <label for="back">뒤에 추가</label>
+    <input type="radio" name="brother" id="front" value="2">
+    <label for="front">앞에 추가</label>
+    <div id="img_div" style="border:2px dotted darkblue;">
+        <p>기준 요소</p>
+    </div>
+    <script>
+        $('#add_btn').on('click',function(){
+            const txt = $('#img_src').val();
+            if($('input[name=brother]:checked').val() == 2){
+                $('#img_div').prepend(`<img src=${txt} width=20>`);
+            } else{
+                $('#img_div').append(`<img src=${txt} width=20>`);
+            }            
+        })
+    </script>
+</body>
+</html>
