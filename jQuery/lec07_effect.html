@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효과</title>
+    <script src="../resources/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h3>슬라이딩 함수</h3>
+<button id="slideUpTest">슬라이드업</button>
+<button id="slideDownTest">슬라이드다운</button>
+<button id="slideToggleTest">슬라이드 토글</button>
+<div id="container" style="background-color: cornflowerblue;">
+    <div>첫번째 메뉴</div>
+    <div>두번째 메뉴</div>
+</div>
+<script>
+    $(function(){
+        $('#slideUpTest').click(function(){
+            $('#container>div').slideUp(500);
+        })
+        $("#slideDownTest").click(function(){
+            $('#container>div').slideDown(500);
+        })
+        $('#slideToggleTest').click(function(){
+            $('#container>div').slideToggle(500,function(){
+                console.log('ㅅㄷㄴㅅ');
+            });
+        })
+    })
+</script>
+<h1>fade함수</h1>
+<button id="fadeInTest">fadeIn</button>
+<button id="fadeOutTest">fadeOut</button>
+<button id="fadeToggleTest">fadeToggle</button><br>
+<img src="../resources/sponge.png" width="200" height="200">
+<script>
+    $(document).ready(function(){
+        $("#fadeInTest").click(function(){
+            $('img').fadeIn(1000);
+        });
+        $('#fadeOutTest').click(function(){
+            $('img').fadeOut(1000);
+        });
+        $('#fadeToggleTest').click(function(){
+            $('img').fadeToggle('fast');
+        });
+    })
+</script>
+<br>
+<style>
+    #notice_div {
+        width: 300px;
+        padding: 20px;
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        display: none; /* 초기에는 숨김 */
+    }
+</style>
+<button id="toggleBtn">공지 보기</button>
+<div id="notice_div">
+    📢 공지사항: 서버 점검으로 인해 내일 02:00 ~ 04:00 서비스가 중단됩니다.
+</div>
+
+<script>
+    $(function(){
+        $('#toggleBtn').click(function(){
+            $('#notice_div').fadeToggle(500); // 공지사항 서서히 보이거나 숨김
+            
+            // 버튼 텍스트 변경
+            if ($(this).text() === "공지 보기") {
+                $(this).text("공지 숨기기");
+            } else {
+                $(this).text("공지 보기");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -48,5 +48,47 @@
             })
         })
     </script>
+    <h3>hover이용하기</h3>
+    <img id="imgTarget" src="../resources/dung.png" width="200" height="200">
+    <script>
+        $(function(){
+            $('img#imgTarget').hover(
+                function(){
+                    $(this).attr('src','../resources/sponge.png');
+                },
+                function(){
+                    $(this).attr('src','../resources/dung.png');
+                }
+            );
+        })
+    </script>
+    <h1>trigger</h1>
+    <label>
+        비밀번호
+        <input name="user_pw" type="password">
+    </label><br>
+    <label>
+        비밀번호 확인
+        <input name="pw_check" type="password">
+    </label>
+    <span id="result"></span>
+    <script>
+        $(function(){
+            $('input[name=pw_check]').on('keyup',function(event){
+                let pwCheck = $('input[name=pw_check]').val();
+                let pw = $('input[name=user_pw]').val();
+                let ele = $('#result');
+                if(pw == pwCheck){
+                    ele.text('일치');
+                }else{
+                    ele.text('불일치!!');
+                }
+            });
+    
+            $('input[name=user_pw]').on('keyup',function(){
+                $('input[name=pw_check]').trigger('keyup');
+            });
+        });
+    </script>
 </body>
 </html>
