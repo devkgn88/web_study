@@ -18,8 +18,11 @@
     </div>
     <script>
         $(function(){
-            $('#on_div>ul>li').on('mouseenter',function(){
-                console.log($(this).text());
+            // $('#on_div>ul>li').on('mouseenter',function(){
+            //     console.log($(this).text());
+            // });
+            $('#on_div>ul>li').mouseenter(function(event){
+                console.log($(event.target).text());
             });
             $('#on_div>h3').on({
                 'mouseenter' : function(){$(this).css('color','red');},
